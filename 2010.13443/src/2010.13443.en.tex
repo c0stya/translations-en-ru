@@ -1,0 +1,428 @@
+\documentclass{article}
+
+\usepackage{PRIMEarxiv}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bbm} % mathbb for numbers
+
+% reset align numbering
+\usepackage{etoolbox}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{example}{Example}
+
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue,
+}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\I}{\mathbbm{1}}
+
+\setlength\parindent{0pt}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%Header
+\pagestyle{fancy}
+\thispagestyle{empty}
+\rhead{ \textit{ }} 
+
+%% Title
+\title{MOORE GRAPH WITH PARAMETERS (3250,57,0,1) DOES NOT EXIST
+%%%% Cite as
+%%%% Update your official citation here when published
+\thanks{\textit{\underline{Citation}}: Translation from Russian:
+\textbf{arXiv:2010.13443v2 [math.CO] 9 Nov 2020}}
+}
+
+\author{
+    A.A.Makhnev \\
+    Krasovskii Institute of Mathematics and Mechanics UB RAS, \\
+    Ural Federal University \\
+    \texttt{makhnev@imm.uran.ru} \\
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+If a regular graph of degree k and diameter d has v vertices then
+\[ v \le 1 + k + k(k - 1) + \cdots + k(k - 1)^{d - 1} \]
+Graphs with $v = 1 + k + k(k - 1) + · · · + k(k - 1)^{d-1}$ are called Moore graphs. Damerell proved that a Moore graph of degree $k \ge 3$ has diameter $2$. If $\Gamma$ is a Moore graph of diameter $2$, then $v = k^2 + 1$, $\Gamma$ is strongly regular with $\lambda = 0$ and $\mu = 1$, and one of the following statements holds: $k = 2$ and $\Gamma$ is the pentagon, $k = 3$ and $\Gamma$ is the Petersen graph, $k = 7$ and $\Gamma$ is the Hoffman-Singleton graph, or $k = 57$. The existence of a Moore graph of degree 57 was unknown.
+
+Jurishich and Vidali have proved that the existence of a Moore graph of degree $k > 3$ is equivalent to the existence of a distance-regular graph with intersection array $\{k - 2, k - 3, 2; 1, 1, k - 3\}$ (in the case $k = 57$ we have a distance-regular graph with intersection array $\{55, 54, 2; 1, 1, 54\}$).
+
+In this paper we prove that a distance-regular graph with intersection array $\{55, 54, 2; 1, 1, 54\}$ does not exist. As a corollary, we prove that a Moore graph of degree 57 does not exist.
+K
+
+\end{abstract}
+
+\keywords{distance-regular graph \and Moore graph}.
+
+\section{Intro}
+
+We consider undirected graphs without loops and multi-edges. If $a,b$ are vertices of a graph $\Gamma$ then we denote by $d(a,b)$ the distance between $a$ and $b$. We denote by $\Gamma_i(a)$ a subgraph of the graph $\Gamma$ induced by a set of vertices with the distance $i$ from the vertex $a$. A subgraph $\Gamma_1(a)$ is called a {\it neighbourhood} of a vertex $a$ and denoted by $[a]$.
+
+The definition of the {\it distance-regular graph} with the intersection array $\{b_0, ..., b_{d-1}; c_1, ..., c_d \}$ can be found in [1].
+
+For a graph $\Gamma$ with the diameter $d$ and $i \in \{2,..,d\}$ let's denote by $\Gamma_i$ a graph defined on the same set of vertices where any two vertices $u,w$ are adjacent if the distance between $u$ and $w$ in the graph $\Gamma$ is $i$.
+
+If a regular graph of degree $k$ and diameter $d$ has $k$ vertices then the following inequality holds:
+
+\[
+    v \le 1 + k + k(k-1) + \cdots + k(k-1)^{d-1}
+\]
+
+Graphs for which the non-strict inequality above turns into equality are called {\it Moore graphs} (1960). This definition belongs to Hoffman and Singleton who explored graphs with diameters of 2 and 3. The simplest example of Moore graph is a regular  $(2d +1)$-polygon.
+
+Damerell [3] (see also [4]) has proven that a graph of degree $k \ge 3$ has diameter 2. In this case $ v = k^2 + 1$ the graph is strongly regular with $\lambda = 0$ and $ \mu = 1 $ and one of the following statements holds: $k = 2$ and the graph is the pentagon, $k = 3$ and the graph is the Petersen graph, $k = 7$ and the graph is the Hoffman-Singleton graph, or $k = 57$. The existence of a Moore graph of degree 57 was unknown.
+
+Ashbacher [5] has proven that a Moore graph of degree 57 is not distance-transitive (the Moore graph of degree 57 sometimes called Ashbacher's graph). G. Higman ([6, Theorem 3.13]) has proven that a Moore graph of degree 57 is not a (vertex?)-symmetric graph. A.A. Makhnev and D.V. Paduchikh explored possible automorphisms of the Moore graph of degree 57.
+
+Jurishich and Vidali [9] have noticed that the existence of a Moore graph of degree $k > 3$ is equivalent to the existence of a distance-regular graph with intersection array $\{k - 2, k - 3, 2; 1, 1, k - 3\}$ (in the case k = 57 we have a distance-regular graph with intersection array $\{55, 54, 2; 1, 1, 54\}$).
+
+In this paper we explore properties of the graph with intersection array $\{55, 54, 2; 1, 1, 54\}$ and claim:
+
+\begin{theorem}A distance-regular graph with intersection array $\{55, 54, 2; 1, 1, 54\}$ does not exist.
+\label{th:1}
+\end{theorem}
+
+\begin{corollary}Strongly regular Moore graph with parameters $(3250, 57, 0, 1)$ does not exist.
+\end{corollary}
+
+This result puts an end to 60 years of research on Moore graphs. The main methods used to prove the results are: the triple intersection number method applied to a graph without the Q-polynomial condition; method of symmetrization of an array of triple intersection numbers (proposed by A.A. Makhnev, the analogue of tensor symmetrization).
+
+
+\section{Auxiliary Results}
+
+Our notation is conventional and can be found in [1]. In the proof of the theorem we use {\it triple intersection numbers} [11].
+
+Let $\Gamma$ be a distance-regular graph with the diameter $d$. For vertices $u_1, u_2, u_3$ and non-negative integers $\Gamma$ and $r_1, r_2, r_3$ are non-greater then $d$ define as
+$ \begin{Bmatrix}
+    u_1 u_2 u_3 \\
+    r_1 r_2 r_3
+\end{Bmatrix}$ a set of vertices $w \in \Gamma$ such that $d(w, u_i) = r_i$.\footnote{Translator's note: I found the definition from [11] to be more precise
+\[
+\begin{Bmatrix}
+    u_1 u_2 u_3 \\
+    r_1 r_2 r_3
+\end{Bmatrix} := \left\{ v \in \text{vertices}(\Gamma) \mid d(v, u_1) = r_1, d(v, u_2) = r_2, d(v, u_3) = r_3 \right\}
+\]
+
+}
+
+Let's denote as
+$\begin{bmatrix}
+    u_1 u_2 u_3 \\
+    r_1 r_2 r_3
+\end{bmatrix}$ the number of vertices in
+$\begin{Bmatrix}
+    u_1 u_2 u_3 \\
+    r_1 r_2 r_3
+\end{Bmatrix}$. Numbers
+$\begin{bmatrix}
+    u_1 u_2 u_3 \\
+    r_1 r_2 r_3
+\end{bmatrix}$
+we refer to as {\it triple intersection numbers}. For the fixed riplet of vertices $u_1,u_2,u_3$ instead of
+$\begin{bmatrix}
+    u_1 u_2 u_3 \\
+    r_1 r_2 r_3
+\end{bmatrix}$ we write
+$[r_1 r_2 r_3]$.
+Unfortunately there is no general way to compute $[r_1 r_2 r_3]$. But in [11] we propose a technique to compute some of $[r_1 r_2 r_3]$ numbers.
+\\
+
+Let $u,v,w$ be vertices of a graph $\Gamma$ and $W = d(u,v)$, $U = d(v,w)$, $V = d(u,w)$. There is only one vertex $x = u$ such that $d(x,u) = 0$. Therefore $[0jh]$ is equal to $0$ or $1$. Thus, $[0jh] = \delta_{jW}\delta_{hW}$, $[i0h] = \delta_{iW}\delta_{hU}$, $[ij0] = \delta_{iU}\delta_{jV}$ (??? it is unclear what is $\delta$).
+
+Another set of equations we can get by fixing the distance between any two vertices from $\{u,v,w\}$ and by counting the number of vertices with any distance to the third one (translation note: any distance $\le d$ ?):
+
+
+\[
+    \sum_{l=1}^d [ljh] = p_{jh}^U - [0jh],
+    \sum_{l=1}^d [ilh] = p_{ih}^V - [i0h],
+    \sum_{l=1}^d [ijl] = p_{ij}^W - [ij0]
+\label{eq:plus}
+\tag{+}
+\]
+
+Wherein some of the triplets disappear. When $|i-j|>W$ or $|i+j|<W$ we have $p_{ij}^W = 0$. Therefore $[ijh]=0$ for all $h \in \{0, ..., d\}$.
+
+Let $S_{ijh}(u,v,w) = \sum_{r,s,t=0}^d Q_{ri}Q_{sj}Q_{th} \begin{bmatrix}
+    u v w \\
+    r s t \end{bmatrix}$.
+If {\it Krein } parameter $q_{ij}^h = 0$ then $S_{ijh}(u,v,w) = 0$.
+\\
+
+Let's fix vertices $u, v, w$ of a distance-regular graph $\Gamma$ with the diameter $3$ and define
+$ \{ijh\} = \begin{Bmatrix} uvw \\ ijh \end{Bmatrix}$,
+$ [ijh] = \begin{bmatrix} uvw \\ ijh \end{bmatrix}$,
+$ [ijh]' = \begin{bmatrix} uwv \\ ihj \end{bmatrix}$,
+$ [ijh]^* = \begin{bmatrix} vuw \\ jih \end{bmatrix}$,
+$ [ijh]^{\sim} = \begin{bmatrix} wvu \\ hji \end{bmatrix}$
+In cases where $d(u,v) = d(u,w) = d(v, w) = 2$ or $d(u,v) = d(u,w) = d(v, w) = 3$ computation of the parameters
+$ [ijh]' = \begin{bmatrix} uwv \\ ihj \end{bmatrix}$,
+$ [ijh]^* = \begin{bmatrix} vuw \\ jih \end{bmatrix}$,
+$ [ijh]^{\sim} = \begin{bmatrix} wvu \\ hji \end{bmatrix}$
+(symmetrization of the array of triple intersection numbers) can give new ratios to prove the non-existence of the graph.
+
+\section{Properties of $\Gamma_3(u)$ graph}
+
+In this section the graph $\Gamma$ is a distance-regular graph with intersection array $\{55, 54, 2; 1, 1, 54\}$. Then $\Gamma$ has the spectrum $55^1, 7^{1617}, -1^{110}, -8^{1408}, 1 + 55 + 2970 + 110 = 3136$ vertices and dual eigenvalue matrix (translator's note: dual eigenmatrix?):
+
+\renewcommand{\arraystretch}{2.2}
+\[
+\begin{pmatrix}
+    1 & 1617 & 110 & 1408 \\
+    1 & \dfrac{1029}{5} & -2 & -\dfrac{1024}{5} \\
+    1 & -\dfrac{49}{15} & -2 & \dfrac{64}{15} \\
+    1 & \dfrac{147}{5} & 54 & -\dfrac{128}{5}
+\end{pmatrix}
+\]
+\renewcommand{\arraystretch}{1.0}
+\\
+
+Then the graph $\Gamma_3$ is $56 \times 56$ lattice graph and the neighborhood of the vertex in $\Gamma_3$ is a union of two isolated $55$-cliques.
+
+\begin{lemma}The intersection numbers of the graph $\Gamma$ are:
+    \begin{enumerate}
+	\item $p_{11}^1 = 0, p_{12}^1 = 54, p_{22}^1 = 2808, p_{23}^1 = 108, p_{33}^1 = 2$
+	\item $p_{11}^2 = 1, p_{12}^2 = 52, p_{13}^2 = 2, p_{22}^2 = 2811, p_{23}^2 = 106, p_{33}^2 = 2$
+	\item $p_{12}^3 = 54, p_{13}^3 = 1, p_{22}^3 = 2862, p_{23}^3 = 54, p_{33}^3 = 54$
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof} Direct computation according to [1, Lemma 4.1.7].
+    Let's fix the vertices $u,v,w$ of the graph $\Gamma$ and define
+$ \{ijh\} = \begin{Bmatrix} uvw \\ ijh \end{Bmatrix}$,
+$ [ijh] = \begin{bmatrix} uvw \\ ijh \end{bmatrix}$.
+
+Let $\Delta = \Gamma_2(u)$ and $\Lambda = \Delta_2$. Then $\Lambda$ is a regular graph of degree $p^2_{22} = 2811$ defined on $k_2 = 2970$ vertices.
+\end{proof}
+
+\begin{lemma} Let $d(u,v) = 2, d(u,w) = d(v,w) = 1$. Then triple intersection numbers are:
+    \begin{enumerate}
+	\item $[122] = 52, [132] = 2$
+	\item $[212] = 52, [221] = 53, [222] = r_1 + 2650, [223] = -r_1 + 108, [232] = -r_1 + 106, [233] = r_1$
+	\item $[312] = 2, [322] = -r_1 + 106, [323] = [332] = r_1, [333] = -r_1 + 2$
+    \end{enumerate}
+    where $r_1 \in \{0,1,2\}$
+\label{lem:2}
+\end{lemma}
+
+\begin{proof} Simplification of the set of equations \ref{eq:plus}.
+\end{proof}
+
+\begin{lemma} Let $d(u,v) = d(u, w) = 2, d(v,w) = 3$. Then triple intersection numbers are:
+    \begin{enumerate}
+	\item $[112] = [121] = -r_6 + 1, [113] = [131] = r_6, [122] = r_7, [123] = [132] = r_6 - r_7 + 51, [133] = -2r_6 + r_7 - 49$
+	\item $[212] = [221] = 52, [213] = [231] = 0, [222] = r_5 + r_6 + 2756 - r_7 = r_9, [223] = [232] = -2r_6 + r_7 + 3, [233] = 2r_6 - r_7 + 102$
+	\item $[312] = [321] = r_6 + 1, [313] = [331] = 1 - r_6, [322] = 5 - 2 r_6, [323] = [332] = r_6, [333] = 1$
+    \end{enumerate}
+    where $r_6 \in \{0,1\}$, $r_7 \in \{49, ..., 52 \}$. Then one of the followings is true:
+    \[[222] = 2706 \text{ and } [222] = 2r_6 + 50 = r_7 \]
+    or
+    \[[222] = 2707 \text{ and } [222] = 2r_6 + 51 = r_7 \text{ and } r_6 = 0 \]
+\end{lemma}
+\begin{proof} Using computer aided simplification of the set of equations \ref{eq:plus} we have
+
+$[112] = -r_{6} +1, [113] = r_{6} , [121] = -r_{4} -r_{8} +54, [122] = r_{7} , [123] = r_{4} -r_{7} +r_{8} -2, [131] = r_{4} +r_{8} -53, [132] = r_{6} - r_{7} + 51, [133] = -r_{4} - r_{6} + r_{7} - r_{8} + 4;$ \\
+$[212] = r_{5} + r_{6} - r_{7} - r_{9} + 2808, [213] = -r_{5} - r_{6} + r_{7} + r_{9} - 2756, [221] = r_{4} , [222] = r_{9} , [223] = -r_{4} - r_{9} + 2811, [231] = -r_{4} + 52, [232] = -r_{5} - r_{6} + r_{7} + 3, [233] = r_{4} + r_{5} + r_{6} - r_{7} + 50;$ \\
+$[312] = -r_{5} + r_{7} + r_{9} - 2755, [313] = r_{5} - r_{7} - r_{9} + 2757, [321] = r_{8} , [322] = -r_{7} - r_{9} + 2861, [323] = r_{7} - r_{8} + r_{9} - 2755, [331] = -r_{8} + 2, [332] = r_{5} , [333] = -r_{5} + r_{8}$, \\
+
+where $r_4 \in \{51, 52\}, r_5 \in \{0, 1, 2\}, r_6 \in  \{0, 1\}, r_7 \in \{49, ..., 52\}, r_8 \in \{0, 1, 2\}, r_9 \in \{2705, ..., 2710\}$.
+Thus $2705 \le [222] = r_9 \le 2710$. \\
+
+In the $56 \times 56$ lattice $\Gamma_3$ a subgraph $\Gamma_3(u) \cap \Gamma_3(v)$ is 2-co-clique which has intersection with $\Gamma_3(w)$ exactly in one vertex. Therefore $[333] = -r_5 + r_8 = 1$ and $r_5 \in \{0, 1\}$.
+
+Same, $\Gamma_3(v) \cap \Gamma_3(w)$ is 54-clique which has intersection just with $\Gamma_3(u)$ in no more then one vertex. Therefore $[133] = - r_4 - r_6 + r_7 - r_5 + 3 \le 1$. \\
+
+Symmetrization. For the vertex triplet  $(u, v, w)$ we have $[122] = r'_7 = r'_7 , -r_6 + 1 = [112] = [121]' = -r'_4 - r'_5 + 53$ and $r_4 + r_5 = r'_6 + 52$. Then, $[222] = r_9 = r'_9$, $r_6 = [323] = [332]' = r'_5$ and  $r_4 = 52$. Therefore $[133] = -49 - r_6 + r_7 - r_5 \le 1$ and $ r_7 \le r_6 + r_5 + 50$.
+
+Then we have $[313] = r_5 - r_7 - r_9 + 2757$, therefore
+$r_7 + r_9 \le r_5 + 2757$ and $[213] = -r_5 - r_6 + r_7 + r_9 - 2756 \le 1 - r_6$.
+
+Assume $[213] = 1$. Then $r_6 = 0, [233] = r_5 -r_7 + 102$ and $r_5 = r'_5 = 0$, thus $r_7 +r_9 = 2757$.
+
+Because $[133] = r_7 - r_8 - 48 = r'_7 - r'_8 - 48$ then $r_8 = r'_8$. Further, $1 = [112] = [121]' = r'_8$ and $r_8 = 1$. Same,
+$[233] = r_4 - r_7 + 50$, therefore, $r_4 = r'_4$. We have a contradiction because $51 = [212] = [221]' = r'_4 = 52$. Therefore $[213] = 0$ and $r_7 + r_9 = r_5 + r_6 + 2756$. If $r_6 = 0$, then $[233] = r_5 - r_7 + 102$ and $r_5 = r'_5 = 1$.\\
+
+In case if $r_6 = 1$, then $[233] = r_5 - r_7 + 103$ and  $r_5 = r'_5 = 1$. Thus in either cases we have $r_5 = r_6$ and we have symmetrized array:
+
+ $[112] = [121] = -r_6 + 1, [113] = [131] = r_6 , [122] = r_7 , [123] = [132] = r_6 - r_7 + 51, [133] = -2r_6 + r_7 - 49;$
+
+$[212] = [221] = 52, [213] = [231] = 0, [222] = r_5 + r_6 + 2756 - r_7 = r_9 , [223] = [232] = -2r_6 + r_7 + 3, [233] = 2r_6 - r_7 + 102;$
+
+$[312] = [321] = r_6 + 1, [313] = [331] = 1 - r_6, [322] = 5 - 2r_6 , [323] = [332] = r_6 , [333] = 1$
+
+where $r_6 \in \{0, 1\}, r_7 \in \{49, ..., 52\}$. \\
+
+If $[222] \ge 2708$ then $r_7 \le 48 + 2r_6$ and the equation $[133] = -2r_6 + r_7 - 49$ gives a contradiction.
+If $[222] = 2705$, then $r_7 = 51 + 2r_6$, we have contradiction with the fact $[133] = -2r_6 + r_7 - 49 \le 1$. So, either
+$[222] = 2706$ and $[222] = r_5 + r_6 + 50 = r_7$ or $[222] = 2707, r_5 + r_6 + 51 = r_7$ and $r_5 + r_6 = 0$.
+
+\end{proof}
+
+\begin{lemma} Let $d(u, v) = d(u, w) = 2$, $d(v, w) = 1$. Then triple intersection numbers are:
+    \begin{enumerate}
+	\item $[122] = 51, [123] = [132] = 0, [133] = 2$;
+	\item $[212] = [221] = 51, [222] = 2654, [223] = [232] = 106, [233] = 0$;
+	\item $[312] = [321] = 2, [322] = 102, [323] = [332] = 2, [333] = 0$.
+    \end{enumerate}
+Further, $[222] = 2654$.
+\label{lem:4}
+\end{lemma}
+
+\begin{proof} Using simplification of the formula set \ref{eq:plus} we get:
+
+$[122] = r_3 , [123] = [132] = -r_3 + 51, [133] = r_3 - 49$;
+
+$[212] = [221] = 51, [222] = -r_2 - r_3 + 2705, [223] = [232] = r_2 + r_3 + 55, [233] = -r_2 - r_3 + 51$;
+
+$[312] = [321] = 2, [322] = r_2 + 102, [323] = [332] = -r_2 + 2, [333] = r_2$
+
+where $r_2 \in \{0, 1, 2\}, r_3 \in \{49, 50, 51\}$. \\
+
+In the $56 \times 56$-lattice $\Gamma_3$ a subgraph $\Gamma_3(u) \cap \Gamma_3(w)$ is 2-co-clique. It has no intersection with $\Gamma_3(v)$. Therefore $[333] = r_2 = 0$. \\
+
+Let's compute a number $d$ of pairs of vertices $(y,z)$ with the distance $3$ in the graph $\Lambda$ where
+ $y \in \begin{Bmatrix}uv \\ 2 1 \end{Bmatrix}$,
+ $z \in \begin{Bmatrix}uv \\ 2 3 \end{Bmatrix}$.
+
+On the one hand we have $[213] = 0$ and $d = 0$ by the Lemma \ref{lem:2}. On the other hand we have $ d = 52[233] = 0 $, therefore $[233] = 0$ and $r_3 = 51$. Thereby we have the equations from the lemma statement.
+\end{proof}
+
+\begin{lemma} Let $d(u, v) = d(u, w) = (v, w) = 2$. Then triple intersection numbers are: \\
+$[111] = -r_{16} - r_{11} + 1, [112] = r_{11} , [113] = r_{16} , [121] = r_{14} , [122] = -r_{12} - r_{14} + 52, [123] = r_{12}, [131] = -r_{14} + r_{16} + r_{11} , [132] = r_{12} + r_{14} - r_{11} , [133] = -r_{12} - r_{16} + 2$;
+
+$[211] = r_{15} + r_{16} - r_{17} + 50, [212] = r_{17} , [213] = -r_{15} - r_{16} + 2, [221] = -r_{15} - r_{16} + r_{17} - r_{10} + 2, [222] = r_{12} + r_{16} - r_{17} + r_{10} + 2704, [223] = -r_{12} + r_{15} + 104, [231] = r_{10} , [232] = -r_{12} - r_{16} - r_{10} + 106, [233] = r_{12} + r_{16}$;
+
+$[311] = -r_{15} +r_{17} +r_{11} -50, [312] = -r_{17} -r_{11} +52, [313] = r_{15} , [321] = -r_{14} +r_{15} +r_{16} -r_{17} +r_{10} +50, [322] = r_{14} -r_{16} +r_{17} -r_{10} +54, [323] = -r_{15} +2, [331] = r_{14} -r_{16} -r_{10} -r_{11} +2, [332] = -r_{14} +r_{16} +r_{10} +r_{11}, [333] = 0$ \\
+
+where $r_{10}, r_{12}, r_{15} \in \{0, 1, 2\}, r_{11} , r_{14} , r_{16} \in \{0, 1\}, r_{17} \in \{49, ..., 52\}$.
+
+Further, $2652 \le [222] = r_{12} + r_{16} - r_{17} + r_{10} + 2704 \le 2659$.
+
+\end{lemma}
+
+\begin{proof} With computer-aided simplification of \ref{eq:plus} we have:
+
+$[111] = -r_{16} - r_{11} + 1, [112] = r_{11} , [113] = r_{16} , [121] = r_{14} , [122] = -r_{12} - r_{14} + 52, [123] = r_{12} , [131] = -r_{14} + r_{16} + r_{11} , [132] = r_{12} + r_{14} - r_{11} , [133] = -r_{12} - r_{16} + 2$;
+
+$[211] = r_{15} + r_{16} - r_{17} + 50, [212] = r_{17} , [213] = -r_{15} - r_{16} + 2, [221] = -r_{15} - r_{16} + r_{17} - r_{10} + 2, [222] = r_{12} -r_{13} +r_{16} -r_{17} +r_{10} +2704, [223] = -r_{12} +r_{13} +r_{15} +104, [231] = r_{10} , [232] = -r_{12} +r_{13} -r_{16} -r_{10} +106, [233] = r_{12} - r_{13} + r_{16}$;
+
+$[311] = -r_{15} +r_{17} +r_{11} -50, [312] = -r_{17} -r_{11} +52, [313] = r_{15} , [321] = -r_{14} +r_{15} +r_{16} -r_{17} +r_{10} +50, [322] = r_{13} + r_{14} - r_{16} + r_{17} - r_{10} + 54, [323] = -r_{13} - r_{15} + 2, [331] = r_{14} - r_{16} - r_{10} - r_{11} + 2, [332] = -r_{13} - r_{14} + r_{16} + r_{10} + r_{11} , [333] = r_{13}$
+
+where $r_{10} , r_{12} , r_{13} , r_{15} \in \{0, 1, 2\}, r_{11} , r_{14} , r_{16} \in \{0, 1\}, r_{17} \in \{49, ..., 52\}$.
+
+In the $56 \times 56$-lattice $\Gamma_3$ a subgraph $\Gamma_3(u) \cap \Gamma_3(w)$ is 2-co-clique. It has no intersection with $\Gamma_3(v)$. Therefore $[333] = r_{13} = 0$. Thereby we have the required equations.
+
+Let's note that $r_{12} + r_{16} \le 2$, therefore $2652 \le [222] = r_{12} + r_{16} - r_{17} + r_{10} + 2704 \le 2659$. Lemma is proved.
+\end{proof}
+For number $e$ of edges between $\Lambda(v)$ and $\Lambda_2(v)$ in a graph $\Lambda$ the following inequalities hold: $424844 = 52 \cdot 2654 + 106 \cdot 2706 \le e \le 52 \cdot 2654 + 106 \cdot 2707 = 424950$. Therefore $ 151.136 \le 2810 - \lambda \le 151.174$ and $2658.826 \le \lambda \le 2658.864$, where $\lambda$ is a mean value of the parameter $\lambda(\Lambda)$.
+
+Let's note that the mean value $\lambda(\Lambda)$ is very close to the upper bound $2659$.
+
+\section{Proof of the theorem}
+
+Let $\Gamma$ be a distance-regular graph with an intersection array $\{55, 54, 2; 1, 1, 54\}$. Here we will prove the Theorem \ref{th:1}.
+Let's fix $(u,v,w)$ vertices of the graph $\Gamma$ and define
+$\{ijh\} = \begin{Bmatrix}uvw \\ ijh \end{Bmatrix}$,
+$[ijh] = \begin{bmatrix}uvw \\ ijh \end{bmatrix}$.
+Let $\Delta = \Gamma_2(u)$ and $\Lambda = \Delta_2$. Then $\Lambda$ is a regular graph with the degree $p^2_{22} = 2811$ defined on $k_2 = 2970$ vertices.
+
+\begin{lemma} Let $d(u, v) = d(u, w) = (v, w) = 2$. Then the following statements hold:
+\begin{enumerate}
+    \item $r_{11} = r'_{14}, r'_{10} = [213] = r^*_{12}, r_{15} + r_{16} + r'_{10} = 2$ and  $-r_{17} + 52 = r^*_{12} + r^*_{14}$
+    \item if $r'_{10} = 2$ then $r_{10} = 2$ and one of the following cases is true:
+
+either $r_{11} = 0$ and \\
+$[111] = 1, [112] = [113] = [121] = [131] = 0, [122] = 50, [123] = [132] = 2, [133] = 0;$ \\
+$[211] = 0, [212] = r_{17} = 50, [213] = [231] = 2, [221] = 50, [222] = 2658, [223] = [232] = 102, [233] = 2;$ \\
+$[311] = 0, [312] = [321] = 2, [313] = 0, [322] = 102, [323] = [332] = 2, [331] = [333] = 0$,\\
+
+or $r_{11} = 1$ and \\
+$[111] = 0, [112] = [121] = 1, [113] = [131] = 0, [122] = 49, [123] = [132] = 2, [133] = 0;$ \\
+$[211] = 1, [212] = [221] = r_{17} = 49, [213] = [231] = 2, [222] = 2659, [223] = [232] = 102, [233] = 2;$ \\
+$[311] = 0, [312] = [321] = 2, [313] = [331] = 0, [322] = 102, [323] = [332] = 2, [333] = 0.$
+
+\end{enumerate}
+
+\end{lemma}
+
+\begin{proof} Symmetrization. From $[111] = -r_{16} - r_{11} + 1$ we have $r_{16} + r_{11} = r'_{16} + r'_{11} = r^*_{16} + r^*_{11} = r^\sim_{16} + r^\sim_{11}$. Then
+ $[112] = r_{11} = r*_{11} , [113] = r_{16} = r^*_{16} , [121] = r_{14} = r^\sim_{14} , [212] = r_{17} = r^\sim_{17}, [313] = r_{15} = r^\sim_{15}, r_{11} = [112] = [121]' = r'_{14}, r'_{10} = [213] = r^*_{12}$. \\
+
+From $[122] = -r_{12} - r_{14} + 52$ follows $r_{12} + r_{14} = r'_{12} + r'_{14}, [233] = r_{12} + r_{16} = r'_{12} + r'_{16}, r_{10} = [231] = [213]' = -r'_{15} - r'_{16} + 2$ and $r'_{10} + r_{15} + r_{16} = 2$. \\
+
+Similarly, $-r_{17} - r_{11} + 52 = [312] = [132]^* = r^*_{12} + r^*_{14} - r^*_{11}$ and  $-r_{17} + 52 = r^*_{12} + r^*_{14}$. The statement (1) is proved.\\
+
+Let's assume $ r'_{10} = 2$. Then $r^*_{12} = 2, r_{15} + r_{16} = 0$ and $r_{17} + r^*_{14} = 50$. Because $[131] = -r_{14} + r_{11}$ then in the case of $r_{11} = 0$ we have $r_{14} = 0, [132] = r_{12} + r_{14} - r_{11} = r_{12} = r'_{12}, [211] = -r_{17} + 50, [311] = r_{17} - 50$. Now $-r_{12} - r_{10} + 106 = [232] = [223]' = -r'_{12} + 104 = -r_{12} + 104$, therefore $r_{10} = 2, [212] = [221] = r_{17} = 50, r_{17} = [122] = -r_{12} + 52, r_{12} = 2$ and \\
+
+$[111] = 1, [112] = [113] = [121] = [131] = 0, [122] = 50, [123] = [132] = 2, [133] = 0;$
+$[211] = 0, [212] = r_{17} = 50, [213] = [231] = 2, [221] = 50, [222] = 2658, [223] = [232] = 102, [233] = 2;$
+$[311] = 0, [312] = [321] = 2, [313] = 0, [322] = 102, [323] = [332] = 2, [331] = [333] = 0.$ \\
+
+In case where $r_{11} = 1$ we have $[233] = r_{12} = r'_{12}$, thereby $r_{12} = [123] = [132] = [132] = r_{12} + r_{14} - 1, r_{14} = 1, -r_{17} + 51 = [312] = [321]' = -r'_{17} + r'_{10} + 49, r_{17} = r'_{17}, r_{10} = 2$ and $-r_{17} +51 = [312] = [132]^* = r^*_{12}$. \\
+
+We have $[222] = r_{12} + 2657$, thereby $r_{12} = r^*_{12}, r_{12} + r_{17} = 51$ and \\
+$[111] = 0, [112] = [121] = 1, [113] = [131] = 0, [122] = 49, [123] = [132] = 2, [133] = 0;$ \\
+$[211] = 1, [212] = [221] = r_{17} = 49, [213] = [231] = 2, [222] = 2659, [223] = [232] = 102, [233] = 2;$ \\
+$[311] = 0, [312] = [321] = 2, [313] = [331] = 0, [322] = 102, [323] = [332] = 2, [333] = 0.$ \\
+
+Now $[212] = [221] = r_{17} = r^*_{17}, r_{17} = [122] = -r_{12} + 51$ and $r_{12} = 2$. Lemma is proved.
+\end{proof}
+
+
+The following idea from Vidali can be used to simplify the proof of the theorem. Let $d(u, v) = 2$. Then $[u]$ has one element in each row and each column of the $55 \times 55$-lattice $\Gamma_3 - (\{u\} \cap \Gamma_3(u))$
+Let $\{x, y\} = [u] \cap \Gamma_3 (v)$. Then there is only one vertex in the subgraph $\Gamma_3(x) \cap \Gamma_3(y) - \{v\}$. We have a contradiction with the fact $[133] = 2]$ (see Lemma \ref{lem:4}) for any three vertices $(u,v,w)$ with $d(u, v) = d(u, w) = 2, d(v, w) = 1$.
+
+Theorem \ref{th:1} is proved.
+
+\begin{thebibliography}{}
+
+\bibitem[1]{1} Brouwer A. E., Cohen A. M., Neumaier A. Distance-Regular Graphs. Berlin; Heidelberg; New York: Springer-Verlag, 1989.
+\bibitem[2]{2} Hoﬀman Alan J., Singleton Robert R. Moore graphs with diameter 2 and 3 // IBM Journal of Research and Development. 1960. V. 5, N 4. P. 497–504.
+\bibitem[3]{3} Damerell R.M. On Moore graphs // Math. Proc. Cambr. Phil. Soc., Vol. 74 (1973). P. 227–236.
+\bibitem[4]{4} Bannai E., Ito T. On ﬁnite Moore graphs // Journal of the Faculty of Science, the University of Tokyo. Sect. 1 A, Mathematics. 1973, V. 20. P. 191-208.
+\bibitem[5]{5} Ashbacher M. The nonexistence of rank 3 permutation group of degree 3250 and subdegree 57 // J.Algebra, Vol. 19, no. 3 (1971). P. 538-540.
+\bibitem[6]{6} Cameron P.J. Permutation Groups. London Math. Soc. Student Texts N 45: Cambridge Univ. Press, 1999
+\bibitem[7]{7} Makhnev A.A., Paduchikh D.V. On automorphisms of Aschbacher graph // Algebra i Logika, Vol. 40, no. 2 (2001). P. 125-134.
+\bibitem[8]{8} Makhnev A.A., Paduchikh D.V. On automorphisms group of Aschbacher graph // Doklady RAN, Vol. 426, no. 3 (2009). P. 310-313.
+\bibitem[9]{9} Jurishich A., Vidali J. The Sylvester graph and Moore graphs // Europ. J. Comb., Vol. 80 (2019). P. 184-193.
+\bibitem[10]{10} Makhnev A.A., Paduchikh D.V. The most Moore graph and distance-regular graph with intersection array $\{55, 54, 2; 1, 1, 54\}$ // Algebra i Logika, Vol. 59, no. 4 (2020).
+\bibitem[11]{11} Jurishich A., Vidali J. Extremal 1-codes in distance-regular graphs of diameter 3 // Des. Codes Cryptogr., Vol. 65 (2012). P. 29–47.
+\end{thebibliography}
+
+\section*{About Authors}
+MAKHNEV Alexander Alexeevich \\
+Russia, Ekaterinburg, S.Kovalevskoy st, 16, 620990, \\
+N.N. Krasovskii Institute of Mathematics and Mechanics \\
+Russia, Ekaterinburg, Mira st, 19, 620002, \\
+Ural Federal University \\
+makhnev@imm.uran.ru
+
+\section*{About Translators}
+Selivanov Konstantin, konstantin.selivanov@gmail.com
+
+\end{document}
